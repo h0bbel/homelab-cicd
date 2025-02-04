@@ -6,4 +6,4 @@
 
 1. Create runner(s)
 2. build logic
-3. profit
+3. Profit?
