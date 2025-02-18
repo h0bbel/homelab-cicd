@@ -1,9 +1,16 @@
 # Homelab CI/CD
 
-## Packer
+Repository for hosting code used in CI/CD pipelines.
 
-### TODO
+This repository is synced between my homelab GitLab installation and Github. 
 
-1. Create runner(s)
-2. build logic
-3. Profit?
+## Projects
+
+### Image Shop
+
+#### Packer
+
+##### Ubuntu
+
+    Fully automated Packer config that generates Ubuntu 24.04 images for VMware vSphere.
+    
