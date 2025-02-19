@@ -18,7 +18,7 @@ Fully automated Ubuntu 24.04 templates.
 
 ###### Environment Variables
 
-Environment variables defined in CI/CD setup gets mapped into the build.sh script that's run inside the Packer container.
+Environment variables defined in CI/CD setup gets mapped into the build.sh script that's run inside the Packer container, and is then picked up by Packer during build.
 
 **Packer Specific variables**
 
@@ -45,13 +45,12 @@ CI/CD Variable | Variable in Packer Container | Description
 
 **Template specific variables**
 
-```
-PKR_VAR_ssh_username=$ssh_username
-PKR_VAR_ssh_password=$ssh_password
-PKR_VAR_ssh_password_hash=$ssh_password_hash
-PKR_VAR_ssh_authorized_keys=$ssh_authorized_keys
-PKR_VAR_tpl_disk_size=$tpl_disk_size
-PKR_VAR_tpl_mem_size=$tpl_mem_size
-PKR_VAR_tpl_vm_disk_controller_type=$tpl_vm_disk_controller_type
-PKR_VAR_tpl_cpu_num=$tpl_cpu_num
-```
+CI/CD Variable | Variable in Packer Container | Description
+---------|----------|---------
+ PKR_VAR_ssh_username| $ssh_username | Username for SSH connections to the template
+ PKR_VAR_ssh_password_hash| $ssh_password_hash | Hashed password for the SSH user
+ PKR_VAR_ssh_authorized_keys| $ssh_authorized_keys | SSH Authorized Key to add for $ssh_username
+ PKR_VAR_tpl_disk_size| $tpl_disk_size | Disk size for template
+ PKR_VAR_tpl_mem_size| $tpl_mem_size | Memory size for template
+ PKR_VAR_tpl_cpu_num| $tpl_cpu_num | Number of vCPUs for template
+ PKR_VAR_tpl_vm_disk_controller_type| $tpl_vm_disk_controller_type | Disk controller type for template
