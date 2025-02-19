@@ -18,25 +18,30 @@ Fully automated Ubuntu 24.04 templates.
 
 ###### Environment Variables
 
+Environment variables defined in CI/CD setup gets mapped into the build.sh script that's run inside the Packer container.
+
 **Packer Specific variables**
-```
-PACKER_LOG=
-CHECKPOINT_DISABLE=1
-```
+
+CI/CD Variable | Variable in Packer Container | Description
+---------|----------|---------
+ PACKER_LOG | $packer_debug | [Packer debug enabled/disabled](https://developer.hashicorp.com/packer/docs/debugging) 
+ CHECKPOINT_DISABLE | 1 | [Disable Packer update check](https://developer.hashicorp.com/packer/docs/configure#checkpoint_disable)
 
 **vSphere specific variables from CICD**
 
-```
-PKR_VAR_vcenter_server=$vcenter_server
-PKR_VAR_vcenter_password=$vcenter_password
-PKR_VAR_vcenter_user=$vcenter_user
-PKR_VAR_vcenter_cluster=$vcenter_cluster
-PKR_VAR_vcenter_dc_name=$vcenter_dc_name
-PKR_VAR_vcenter_portgroup_name=$vcenter_portgroup_name
-PKR_VAR_vcenter_datastore=$vcenter_datastore
-PKR_VAR_vcenter_template_name=$vcenter_template_name
-PKR_VAR_vcenter_folder=$vcenter_folder
-```
+These variables are prefixed with PKR_VAR to ensure Packer picks them up
+
+CI/CD Variable | Variable in Packer Container | Description
+---------|----------|---------
+ PKR_VAR_vcenter_server | $vcenter_server | VMware vCenter host name
+ PKR_VAR_vcenter_user | $vcenter_user | VMware vCenter username
+ PKR_VAR_vcenter_password | $vcenter_password | Password for $vcenter_user
+ PKR_VAR_vcenter_cluster | $vcenter_cluster | vCenter Cluster name
+ PKR_VAR_vcenter_dc_name | $vcenter_dc_name | vCenter DataCenter name
+ PKR_VAR_vcenter_portgroup_name | $vcenter_portgroup_name | PortGroup Name for the template
+ PKR_VAR_vcenter_datastore | $vcenter_datastore | Datastore for the template
+ PKR_VAR_vcenter_folder | $vcenter_folder | vCenter folder name to store the template in
+ PKR_VAR_template_name | $vcenter_template_name | Template name
 
 **Template specific variables**
 
