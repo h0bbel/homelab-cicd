@@ -5,6 +5,8 @@ Repository for hosting code used in CI/CD pipelines.
 This repository is synced between my homelab GitLab installation and Github.
 
 ## Projects
+<details>
+<summary>Image Brewery</summary>
 
 ### Image Brewery
 
@@ -16,9 +18,9 @@ Packer is run in a container, and is configured with environment variables from 
 
 Fully automated Ubuntu 24.04 templates.
 
-###### Environment Variables
+##### Environment Variables
 
-Environment variables defined in CI/CD setup gets mapped into the build.sh script that's run inside the Packer container, and is then picked up by Packer during build.
+Environment variables defined in CI/CD setup gets mapped by the `build.sh` script that's run inside the Packer container, and is then subsequently picked up by Packer during build.
 
 **Packer Specific variables**
 
@@ -54,3 +56,4 @@ CI/CD Variable | Variable in Packer Container | Description
  PKR_VAR_tpl_mem_size| $tpl_mem_size | Memory size for template
  PKR_VAR_tpl_cpu_num| $tpl_cpu_num | Number of vCPUs for template
  PKR_VAR_tpl_vm_disk_controller_type| $tpl_vm_disk_controller_type | Disk controller type for template
+</details>
