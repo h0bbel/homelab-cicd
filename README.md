@@ -10,7 +10,7 @@ This repository is synced between my homelab GitLab installation and Github.
 
 ### Image Brewery
 
-[Hasicorp Packer](https://www.packer.io/) based templates for VMware vSphere. Uses [GitLab](https://about.gitlab.com/) [CI/CD](https://docs.gitlab.com/ci/) [pipelines](https://docs.gitlab.com/ci/pipelines/) and [Runners](https://docs.gitlab.com/runner/).
+[Hashicorp Packer](https://www.packer.io/) based templates for VMware vSphere. Uses [GitLab](https://about.gitlab.com/) [CI/CD](https://docs.gitlab.com/ci/) [pipelines](https://docs.gitlab.com/ci/pipelines/) and [Runners](https://docs.gitlab.com/runner/).
 
 Packer is run in a container, and is configured with environment variables from the CI/CD Pipeline.
 
